@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app>
+<head lang="en">
+	<title>Training ANgular
+    <!-- Bootstrap -->
+    <link href="app/thirdparty/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="app/css/global.css" rel="stylesheet">
+	</title>
+</head>
+<body>
+
+UserName
+<input type="text" ng-model ="login.username"/>
+
+<div ng-view>
+	
+{{ "Welcome" }} {{ login.username }} 
+</div>
+
+
+
+</body>
+ <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+    <script src="C:/workspace/cdi-demo/demo/app/thirdparty/jquery/dist/jquery.min.js"></script>
+    <script src="C:/workspace/cdi-demo/demo/app/thirdparty/jquery/dist/jquery.js"></script>
+
+	<script  src="C:/workspace/cdi-demo/demo/app/thirdparty/angular/angular.min.js"></script>
+ 	<script src="C:/workspace/cdi-demo/demo/app/thirdparty/bootstrap/dist/js/bootstrap.min.js"></script>
+ 	
+</html>
+

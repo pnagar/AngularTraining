@@ -1,0 +1,53 @@
+<!DOCTYPE <!DOCTYPE html>
+<html ng-app='APARTFIND'>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="C:/workspace/cdi-demo/demo/app/thirdparty/bootstrap/dist/css/bootstrap.min.css"></link>
+</head>
+<body ng-controller ="ApartmentController as apart">
+<script type="text/javascript" src="C:/workspace/cdi-demo/demo/app/thirdparty/angular/angular.min.js"></script>
+<script src="C:/workspace/cdi-demo/demo/app/thirdparty/angular-route/angular-route.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<h1>{{"Welcome to ApartmentFinder"}}</h1>
+ 
+<div ng-repeat="aparttype in apart.apartmentype | orderBy:'-price'">
+	<h3>{{aparttype.name}}</h3>
+	<h4>
+	<!-- {{aparttype.price}} -->
+     <em class = "pull-right">{{aparttype.price| currency}}
+    <!-- <img ng-src="{{aparttype.images[0].full}}"/> -->
+     </em>
+	</h4>
+	<br/>
+	<br/>
+	<br/>
+	<p>{{aparttype.description}}</p>
+	<button ng-show="aparttype.isAvailable">Hold Now</button>
+
+</div>
+
+<section ><!-- ng-contoller="PanelController as panel"> -->
+	<ul class = "nav nav-pills">
+	<li ng-class="{ active:apart.isSelected(1) }"> <a href ng-click="apart.selectTab(1)">Description</a></li>
+	<li ng-class="{active:apart.isSelected(2)}"> <a href ng-click="apart.selectTab(2)">Neighbourhood</a></li>
+	<li ng-class="{active:apart.isSelected(3)}"> <a href ng-click="apart.selectTab(3)">Reviews</a></li>
+	</ul>
+<h4>{{tab}}</h4>
+
+<div class ="apart" ng-repeat="aparttype in apart.apartmentype" ng-show="apart.isSelected(1)">
+	<h4>Descrption</h4>
+	<p>{{aparttype.description}}</p>
+</div>
+<div class ="panel" ng-show="apart.isSelected(2)">
+	<h4>Neighbourhood</h4>
+	<p>Under Construction TBD!!!</p>
+</div>
+<div class ="panel" ng-show="apart.isSelected(3)">
+	<h4>Reviews</h4>
+	<p>Under Construction TBD!!!</p>
+</div>
+<select class="form-control" >
+</select>
+</section>
+</body>
+</html>
