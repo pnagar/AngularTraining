@@ -6,7 +6,7 @@ this.apartmentype = apartments;
 this.tab = 1;
 
 this.selectTab = function(setTab){
-	alert(setTab);
+	//alert(setTab);
   this.tab = setTab;
 };
 
