@@ -43,25 +43,16 @@ var apartments =[
   }
 ]
 
-
-	var languageJson = [{
-
-	},{
-
-	},{
-
-	}]
-
-app.controller('PanelController', function(){
+app.controller('TabController', function(){
 this.tab = 1;
 
-this.selectTab = function(setTab){
-	alert(setTab);
-  this.tab = setTab;
+this.setTab = function(selectedTab){
+	//alert(setTab);
+  this.tab = selectedTab;
 };
 
-this.isSelected = function(checkTab){
- return this.tab === checkTab;
+this.isSet = function(selectedTab){
+ return this.tab === selectedTab;
 };
 
 });

@@ -1,4 +1,4 @@
-<!DOCTYPE <!DOCTYPE html>
+<!DOCTYPE html>
 <html ng-app='APARTFIND'>
 <head>
 	<title></title>
@@ -10,7 +10,6 @@
 <script type="text/javascript" src="app.js"></script>
 <h1>{{"Welcome to ApartmentFinder"}}</h1>
 
- 
 <div ng-repeat="aparttype in apart.apartmentype | orderBy:'-price'">
 	<h3>{{aparttype.name}}</h3>
 	<h4>
@@ -25,28 +24,52 @@
 	<p>{{aparttype.description}}</p>
 	<button ng-show="aparttype.isAvailable">Hold Now</button>
 
-</div>
 
-<section ><!-- ng-contoller="PanelController as panel"> -->
+<!--<section ng-contoller="PanelController as panel">
 	<ul class = "nav nav-pills">
-	<li ng-class="{ active:apart.isSelected(1) }"> <a href ng-click="apart.selectTab(1)">Description</a></li>
-	<li ng-class="{active:apart.isSelected(2)}"> <a href ng-click="apart.selectTab(2)">Neighbourhood</a></li>
-	<li ng-class="{active:apart.isSelected(3)}"> <a href ng-click="apart.selectTab(3)">Reviews</a></li>
+	<li ng-class="{active:panel.isSelected(1)}"> <a href ng-click="panel.selectTab(1)">Description</a></li>
+	<li ng-class="{active:panel.isSelected(2)}"> <a href ng-click="panel.selectTab(2)">Neighbourhood</a></li>
+	<li ng-class="{active:panel.isSelected(3)}"> <a href ng-click="panel.selectTab(3)">Reviews</a></li>
 	</ul>
 <h4>{{tab}}</h4>
 
-<div class ="apart" ng-repeat="aparttype in apart.apartmentype" ng-show="apart.isSelected(1)">
+<div class ="panel" ng-repeat="aparttype in apart.apartmentype" ng-show="panel.isSelected(1)">
 	<h4>Descrption</h4>
 	<p>{{aparttype.description}}</p>
 </div>
-<div class ="panel" ng-show="apart.isSelected(2)">
+<div class ="panel" ng-show="panel.isSelected(2)">
 	<h4>Neighbourhood</h4>
 	<p>Under Construction TBD!!!</p>
 </div>
-<div class ="panel" ng-show="apart.isSelected(3)">
+<div class ="panel" ng-show="panel.isSelected(3)">
 	<h4>Reviews</h4>
 	<p>Under Construction TBD!!!</p>
 </div>
+</section>-->
+
+
+	<section class="tab" ng-controller ="TabController as tab">
+		<ul class="nav nav-pills">
+			<li ng-class = "{active:tab.isSet(1)}">
+				<a href ng-click = "tab.setTab(1)">Description</a></li>
+			<li ng-class = "{active:tab.isSet(2)}">
+				<a href ng-click = "tab.setTab(2)">Neighbourhood</a></li>
+			<li ng-class = "{active:tab.isSet(3)}">
+				<a href ng-click = "tab.setTab(3)">Reviews</a></li>
+		</ul>
+		<div ng-show = "tab.isSet(1)">
+			<h4>Description</h4>
+			<blockquote>{{aparttype.description}}</blockquote>
+		</div>
+		<div ng-show = "tab.isSet(2)">
+			<h4>Neighbourhood</h4>
+			<blockquote>TBD!!!</blockquote>
+		</div>
+		<div ng-show = "tab.isSet(3)">
+			<h4>Reviews</h4>
+			<blockquote>TBD!!!</blockquote>
+		</div>
+	</section>
 
 	<div>
 		Search :<input ng-model = "query" ng-click ="isQueried = true">
@@ -55,6 +78,7 @@
 	<div class = "col-md-13" ng-repeat="aparttype in apart.apartmentype | filter:query">
 		<h3 ng-show ="isQueried">THIS IS :::{{aparttype.name}}</h3>
 	</div>
-</section>
+
+</div>
 </body>
 </html>
