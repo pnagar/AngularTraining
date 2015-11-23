@@ -9,6 +9,7 @@
 <script src="thirdparty/angular-route.min.js"></script>
 <script type="text/javascript" src="app.js"></script>
 <h1>{{"Welcome to ApartmentFinder"}}</h1>
+
  
 <div ng-repeat="aparttype in apart.apartmentype | orderBy:'-price'">
 	<h3>{{aparttype.name}}</h3>
@@ -46,8 +47,14 @@
 	<h4>Reviews</h4>
 	<p>Under Construction TBD!!!</p>
 </div>
-<select class="form-control" >
-</select>
+
+	<div>
+		Search :<input ng-model = "query" ng-click ="isQueried = true">
+	</div>
+
+	<div class = "col-md-13" ng-repeat="aparttype in apart.apartmentype | filter:query">
+		<h3 ng-show ="isQueried">THIS IS :::{{aparttype.name}}</h3>
+	</div>
 </section>
 </body>
 </html>

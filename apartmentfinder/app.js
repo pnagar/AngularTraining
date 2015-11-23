@@ -1,5 +1,5 @@
 (function(){
-var app = angular.module('APARTFIND', [ ]);
+var app = angular.module('APARTFIND',[]);
 
 app.controller('ApartmentController', function(){
 this.apartmentype = apartments;
@@ -42,6 +42,15 @@ var apartments =[
 	]
   }
 ]
+
+
+	var languageJson = [{
+
+	},{
+
+	},{
+
+	}]
 
 app.controller('PanelController', function(){
 this.tab = 1;
