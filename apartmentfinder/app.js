@@ -27,7 +27,12 @@ var apartments =[
 		{
 		full:'images/Premium.png',
 	    }
-	]
+	],
+	  reviews:[{
+		  stars: "3",
+		  body: "3 Star review",
+		  author:"test@test.com"
+	  }]
   },
   {
 	name: 'Montana',
@@ -39,7 +44,12 @@ var apartments =[
 		{
 		full:'images/Montana.png',
 	    }
-	]
+	],
+	  reviews:[{
+		  stars:"4",
+		  body: "4 Star review",
+		  author:"test@test.com"
+	  }]
   }
 ]
 
