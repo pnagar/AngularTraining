@@ -2,7 +2,9 @@
 <html ng-app='APARTFIND'>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="thirdparty/bootstrap.min.css"></link>
+	<link rel="stylesheet" type="text/css" href="thirdparty/bootstrap.min.css">
+
+	</link>
 </head>
 <body ng-controller ="ApartmentController as apart">
 <script type="text/javascript" src="thirdparty/angular.min.js"></script>
@@ -11,13 +13,8 @@
 <h1>{{"Welcome to ApartmentFinder"}}</h1>
 
 <div ng-repeat="aparttype in apart.apartmentype | orderBy:'-price'">
-	<h3>{{aparttype.name}}</h3>
-	<h4>
-	<!-- {{aparttype.price}} -->
-     <em class = "pull-right">{{aparttype.price| currency}}
-    <!-- <img ng-src="{{aparttype.images[0].full}}"/> -->
-     </em>
-	</h4>
+	<h3 ng-include ="'apartment-price.html'">
+	</h3>
 	<br/>
 	<br/>
 	<br/>
@@ -60,7 +57,7 @@
 					{{review.body}}
 					<cite class="clearfix">—{{review.author}}</cite>
 				</blockquote>
-				
+
 			<h4>Submit a Review</h4>
 			<fieldset class="form-group">
 				<select ng-model ="review.stars" class="form-control" ng-options="stars for stars in [5,4,3,2,1]"  title="Stars">

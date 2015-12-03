@@ -67,4 +67,11 @@ this.isSet = function(selectedTab){
 
 });
 
+app.directive("apartmentPrice", function(){
+	return{
+		restrict:'E',
+		templateUrl:'apartment-price.html'
+	};
+});
+
 })();
