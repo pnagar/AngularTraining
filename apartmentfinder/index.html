@@ -13,7 +13,8 @@
 <h1>{{"Welcome to ApartmentFinder"}}</h1>
 
 <div ng-repeat="aparttype in apart.apartmentype | orderBy:'-price'">
-	<h3 ng-include ="'apartment-price.html'">
+	<h3>
+		<apartment-price></apartment-price>
 	</h3>
 	<br/>
 	<br/>
